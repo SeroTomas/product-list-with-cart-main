@@ -1,10 +1,8 @@
-import Desserts from "./components/Desserts";
+import Desserts from "./desserts/Desserts";
 import "./index.css";
 
 
 const App = () => {
-
-
 
   return (
     <div className="w-full min-h-screen flex justify-center">

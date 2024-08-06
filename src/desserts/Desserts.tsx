@@ -1,5 +1,5 @@
 import useData from "../hooks/useData"
-import Dessert from "./Dessert";
+import Dessert from "./components/Dessert";
 
 
 const Desserts = () => {

@@ -1,6 +1,6 @@
 
 import { useState } from "react"
-import { DessertInterface } from "../models/interfaces"
+import { DessertInterface } from "../../models/interfaces"
 import AddToCartButton from "./AddToCartButton"
 
 
@@ -17,9 +17,11 @@ const Dessert = ({ image, name, category, price }: DessertInterface) => {
     }
 
     return (
-        <div className="flex-col max-w-[250px]">
+        <div className="flex-col max-w-[320px] xl:max-w-[260px]">
             <div className="flex flex-col items-center">
-                <img src={image.desktop} alt={name} className="rounded-xl" />
+                <div className="overflow-hidden h-[180px] rounded-lg xl:h-full">
+                    <img src={image.desktop} alt={name} className=" object-contain -translate-y-[60px] xl:-translate-y-0" />
+                </div>
                 <AddToCartButton
                     amount={amount}
                     decreaseAmount={decreaseAmount}

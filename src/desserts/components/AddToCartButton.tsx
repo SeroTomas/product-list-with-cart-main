@@ -1,6 +1,6 @@
-import CartIcon from "../assets/images/icon-add-to-cart.svg";
-import IncrementIcon from "../assets/images/icon-increment-quantity.svg";
-import DecreaseIcon from "../assets/images/icon-decrement-quantity.svg";
+import CartIcon from "../../assets/images/icon-add-to-cart.svg";
+import IncrementIcon from "../../assets/images/icon-increment-quantity.svg";
+import DecrementIcon from "../../icons/DecrementIcon";
 
 
 interface Props {
@@ -25,8 +25,8 @@ const AddToCartButton = ({ amount, incrementAmount, decreaseAmount }: Props) => 
         <div className="size-full rounded-full flex items-center justify-between bg-red">
             <button
                 onClick={() => decreaseAmount()}
-                className="h-5 w-5 grid place-items-center border border-rose-50 rounded-full p-1 hover:bg-rose-50" >
-                <img src={DecreaseIcon} alt="decrease icon" />
+                className=" grid place-items-center" >
+                <DecrementIcon styles=" h-5 w-5 fill-rose-50 hover:fill-red bg-red border border-rose-50 rounded-full hover:bg-rose-50 p-1"/>
             </button>
             <span>{amount}</span>
             <button
@@ -40,7 +40,7 @@ const AddToCartButton = ({ amount, incrementAmount, decreaseAmount }: Props) => 
 
 
     return (
-        <div className="-translate-y-1/2 w-3/5 h-10 border border-red rounded-full  ">
+        <div className="-translate-y-1/2 w-[160px] h-11 border border-red rounded-full  ">
             {
                 amount ? handleAmountButtons : iddleButton
             }
