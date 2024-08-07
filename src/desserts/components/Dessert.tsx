@@ -2,6 +2,8 @@
 import { useState } from "react"
 import { DessertInterface } from "../../models/interfaces"
 import AddToCartButton from "./AddToCartButton"
+import DessertImage from "./DessertImage";
+import DessertInfo from "./DessertInfo";
 
 
 const Dessert = ({ image, name, category, price }: DessertInterface) => {
@@ -18,21 +20,27 @@ const Dessert = ({ image, name, category, price }: DessertInterface) => {
 
     return (
         <div className="flex-col max-w-[320px] xl:max-w-[260px]">
-            <div className="flex flex-col items-center">
-                <div className="overflow-hidden h-[180px] rounded-lg xl:h-full">
-                    <img src={image.desktop} alt={name} className=" object-contain -translate-y-[60px] xl:-translate-y-0" />
-                </div>
+
+            <DessertImage
+                image={image}
+                name={name}
+                amount={amount}
+            >
+
                 <AddToCartButton
                     amount={amount}
                     decreaseAmount={decreaseAmount}
                     incrementAmount={incrementAmount}
                 />
-            </div>
-            <div>
-                <h3>{category}</h3>
-                <h2>{name}</h2>
-                <p>${price}</p>
-            </div>
+
+            </DessertImage>
+
+            <DessertInfo
+                category={category}
+                name={name}
+                price={price}
+            />
+
         </div>
     )
 }
